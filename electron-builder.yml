@@ -18,6 +18,7 @@ extraResources:
 
 # Windows Configuration
 win: 
+  icon: 'build/icon.ico'
   signAndEditExecutable: false
   target: 
     - target: 'nsis'
@@ -27,6 +28,8 @@ win:
 nsis:
   oneClick: false
   perMachine: false
+  installerIcon: 'build/icon.ico'
+  uninstallerIcon: 'build/icon.ico'
   allowElevation: true
   allowToChangeInstallationDirectory: true
 
