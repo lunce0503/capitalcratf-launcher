@@ -3,6 +3,8 @@ const fs             = require('fs-extra')
 const os             = require('os')
 const path           = require('path')
 
+/* global document */
+
 const ConfigManager  = require('./configmanager')
 const { DistroAPI }  = require('./distromanager')
 const LangLoader     = require('./langloader')
@@ -39,7 +41,15 @@ function onDistroLoad(data){
             ConfigManager.save()
         }
     }
-    ipcRenderer.send('distributionIndexDone', data != null)
+    const sendResult = () => {
+        ipcRenderer.send('distributionIndexDone', data != null)
+    }
+
+    if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', sendResult, { once: true })
+    } else {
+        sendResult()
+    }
 }
 
 // Ensure Distribution is downloaded and cached.

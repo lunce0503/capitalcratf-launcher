@@ -1,15 +1,15 @@
 {
-  "name": "helioslauncher",
+  "name": "capitalcraftlauncher",
   "version": "2.2.1",
-  "productName": "Helios Launcher",
+  "productName": "CapitalCraft Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/)",
+  "author": "https://github.com/lunce0503",
   "license": "UNLICENSED",
   "homepage": "https://github.com/dscalzi/HeliosLauncher",
   "bugs": {
     "url": "https://github.com/dscalzi/HeliosLauncher/issues"
   },
-  "private": true,
+  "private": false,
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -45,8 +45,5 @@
     "electron-builder": "^26.4.0",
     "eslint": "^9.39.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
-  }
+  "repository": "https://github.com/lunce0503/mc-launcher.git"
 }
