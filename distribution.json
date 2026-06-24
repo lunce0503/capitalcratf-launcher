@@ -137,14 +137,14 @@
                     }
                 },
                 {
-                    "id": "kr.kwon.capitalcraft:capitalcraft-client:0.1.0",
-                    "name": "CapitalCraft Client",
+                    "id": "kr.kwon.capitalcraft:capitalcraft-mod:0.1.1",
+                    "name": "CapitalCraft Mod",
                     "type": "FabricMod",
                     "artifact": {
-                        "size": 13193,
-                        "MD5": "d801c950e36a33603637489ae57b36d3",
-                        "url": "https://github.com/lunce0503/capitalcratf-launcher/releases/download/v2.2.3/capitalcraft-client-0.1.0.jar",
-                        "path": "capitalcraft-client-0.1.0.jar"
+                        "size": 14005,
+                        "MD5": "9e9c3a67b9746a376681bde6c500f23b",
+                        "url": "https://github.com/lunce0503/capitalcratf-mod/releases/download/v0.1.1/capitalcraft-mod-0.1.1.jar",
+                        "path": "capitalcraft-mod-0.1.1.jar"
                     }
                 },
                 {

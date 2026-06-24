@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -47,5 +47,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/*
-            app/assets/mods/capitalcraft-client-0.1.0.jar
+            dist/*.exe
