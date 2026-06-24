@@ -141,9 +141,9 @@
                     "name": "CapitalCraft Client",
                     "type": "FabricMod",
                     "artifact": {
-                        "size": 12870,
-                        "MD5": "a0402c473c88dd612bf915ebd711b50e",
-                        "url": "https://github.com/lunce0503/capitalcratf-launcher/releases/download/v2.2.2/capitalcraft-client-0.1.0.jar",
+                        "size": 13193,
+                        "MD5": "d801c950e36a33603637489ae57b36d3",
+                        "url": "https://github.com/lunce0503/capitalcratf-launcher/releases/download/v2.2.3/capitalcraft-client-0.1.0.jar",
                         "path": "capitalcraft-client-0.1.0.jar"
                     }
                 },
