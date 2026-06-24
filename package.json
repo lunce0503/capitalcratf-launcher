@@ -1,13 +1,13 @@
 {
   "name": "capitalcraftlauncher",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "productName": "CapitalCraft Launcher",
   "description": "Modded Minecraft Launcher",
   "author": "https://github.com/lunce0503",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/dscalzi/HeliosLauncher",
+  "homepage": "https://github.com/lunce0503/capitalcratf-launcher",
   "bugs": {
-    "url": "https://github.com/dscalzi/HeliosLauncher/issues"
+    "url": "https://github.com/lunce0503/capitalcratf-launcher/issues"
   },
   "private": false,
   "main": "index.js",
@@ -45,5 +45,5 @@
     "electron-builder": "^26.4.0",
     "eslint": "^9.39.2"
   },
-  "repository": "https://github.com/lunce0503/mc-launcher.git"
+  "repository": "https://github.com/lunce0503/capitalcratf-launcher.git"
 }

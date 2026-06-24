@@ -53,3 +53,9 @@ linux:
 directories:
   buildResources: 'build'
   output: 'dist'
+
+publish:
+  provider: 'github'
+  owner: 'lunce0503'
+  repo: 'capitalcratf-launcher'
+  releaseType: 'release'

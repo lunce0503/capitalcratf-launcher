@@ -4,12 +4,12 @@ const path = require('path')
 
 const ConfigManager = require('./configmanager')
 
-exports.REMOTE_DISTRO_URL = null
+exports.REMOTE_DISTRO_URL = 'https://raw.githubusercontent.com/lunce0503/capitalcratf-launcher/master/distribution.json'
 
 const embeddedDistroPath = path.resolve(__dirname, '..', '..', '..', 'distribution.json')
 const userDistroPath = path.join(ConfigManager.getLauncherDirectory(), 'distribution.json')
 
-if(fs.existsSync(embeddedDistroPath)){
+if(fs.existsSync(embeddedDistroPath) && !fs.existsSync(userDistroPath)){
     fs.ensureDirSync(path.dirname(userDistroPath))
     fs.copyFileSync(embeddedDistroPath, userDistroPath)
 }
@@ -21,10 +21,5 @@ const api = new DistributionAPI(
     exports.REMOTE_DISTRO_URL,
     false
 )
-
-api.pullRemote = async () => ({
-    data: null,
-    responseStatus: null
-})
 
 exports.DistroAPI = api
