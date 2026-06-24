@@ -126,6 +126,28 @@
                     ]
                 },
                 {
+                    "id": "net.fabricmc.fabric-api:fabric-api:0.141.4+1.21.11",
+                    "name": "Fabric API",
+                    "type": "FabricMod",
+                    "artifact": {
+                        "size": 2413332,
+                        "MD5": "5aeec6148c885849936a152bf4683c6d",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.4%2B1.21.11/fabric-api-0.141.4%2B1.21.11.jar",
+                        "path": "fabric-api-0.141.4+1.21.11.jar"
+                    }
+                },
+                {
+                    "id": "kr.kwon.capitalcraft:capitalcraft-client:0.1.0",
+                    "name": "CapitalCraft Client",
+                    "type": "FabricMod",
+                    "artifact": {
+                        "size": 12870,
+                        "MD5": "a0402c473c88dd612bf915ebd711b50e",
+                        "url": "https://github.com/lunce0503/capitalcratf-launcher/releases/download/v2.2.2/capitalcraft-client-0.1.0.jar",
+                        "path": "capitalcraft-client-0.1.0.jar"
+                    }
+                },
+                {
                     "id": "curse.maven:korean-patch-fabric-657742:8220997",
                     "name": "Korean Chat Patch",
                     "type": "FabricMod",
