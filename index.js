@@ -323,7 +323,7 @@ function createMenu() {
 
 }
 
-function getPlatformIcon(filename){
+function getPlatformIcon(_filename){
     let ext
     switch(process.platform) {
         case 'win32':
@@ -336,7 +336,7 @@ function getPlatformIcon(filename){
             break
     }
 
-    return path.join(__dirname, 'app', 'assets', 'images', `${filename}.${ext}`)
+    return path.join(__dirname, 'build', `icon.${ext}`)
 }
 
 app.on('ready', createWindow)
