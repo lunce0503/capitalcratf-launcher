@@ -16,7 +16,7 @@
             "description": "Minecraft 1.21.11 Fabric server.",
             "icon": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/63/Fabric_Logo.png",
             "version": "1.0.0",
-            "address": "192.168.0.18:25565",
+            "address": "luncedevserver.duckdns.org:25565",
             "minecraftVersion": "1.21.11",
             "javaOptions": {
                 "suggestedMajor": 21,
