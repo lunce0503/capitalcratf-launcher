@@ -137,14 +137,14 @@
                     }
                 },
                 {
-                    "id": "kr.kwon.capitalcraft:capitalcraft-mod:0.8.0",
+                    "id": "kr.kwon.capitalcraft:capitalcraft-mod:0.8.1",
                     "name": "CapitalCraft Mod",
                     "type": "FabricMod",
                     "artifact": {
-                        "size": 2129107,
-                        "MD5": "97ecb0b066d1a55fb0c0abbdbcc9a77e",
-                        "url": "https://github.com/lunce0503/capitalcratf-mod/releases/download/v0.8.0/capitalcraft-mod-0.8.0.jar",
-                        "path": "capitalcraft-mod-0.8.0.jar"
+                        "size": 2148189,
+                        "MD5": "082e8a0e3d65c12ebb504d994f3289bf",
+                        "url": "https://github.com/lunce0503/capitalcratf-mod/releases/download/v0.8.1/capitalcraft-mod-0.8.1.jar",
+                        "path": "capitalcraft-mod-0.8.1.jar"
                     }
                 },
                 {
