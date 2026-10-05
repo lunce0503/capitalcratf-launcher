@@ -1,4 +1,3 @@
-const AdmZip                = require('adm-zip')
 const child_process         = require('child_process')
 const crypto                = require('crypto')
 const fs                    = require('fs-extra')
@@ -9,6 +8,7 @@ const os                    = require('os')
 const path                  = require('path')
 
 const ConfigManager            = require('./configmanager')
+const { extractNativeLibrary, resolveNativeLibraryPath } = require('./nativeutils')
 
 const logger = LoggerUtil.getLogger('ProcessBuilder')
 
@@ -716,9 +716,11 @@ class ProcessBuilder {
     _resolveMojangLibraries(tempNativePath){
         const nativesRegex = /.+:natives-([^-]+)(?:-(.+))?/
         const libs = {}
+        const nativeLibraryPath = resolveNativeLibraryPath(this.vanillaManifest, tempNativePath)
 
         const libArr = this.vanillaManifest.libraries
         fs.ensureDirSync(tempNativePath)
+        fs.ensureDirSync(nativeLibraryPath)
         for(let i=0; i<libArr.length; i++){
             const lib = libArr[i]
             if(isLibraryCompatible(lib.rules, lib.natives)){
@@ -732,32 +734,7 @@ class ProcessBuilder {
                     // Location of native zip.
                     const to = path.join(this.libPath, artifact.path)
 
-                    let zip = new AdmZip(to)
-                    let zipEntries = zip.getEntries()
-
-                    // Unzip the native zip.
-                    for(let i=0; i<zipEntries.length; i++){
-                        const fileName = zipEntries[i].entryName
-
-                        let shouldExclude = false
-
-                        // Exclude noted files.
-                        exclusionArr.forEach(function(exclusion){
-                            if(fileName.indexOf(exclusion) > -1){
-                                shouldExclude = true
-                            }
-                        })
-
-                        // Extract the file.
-                        if(!shouldExclude){
-                            fs.writeFile(path.join(tempNativePath, fileName), zipEntries[i].getData(), (err) => {
-                                if(err){
-                                    logger.error('Error while extracting native library:', err)
-                                }
-                            })
-                        }
-
-                    }
+                    extractNativeLibrary(to, nativeLibraryPath, exclusionArr)
                 }
                 // 1.19+ logic
                 else if(lib.name.includes('natives-')) {
@@ -777,38 +754,7 @@ class ProcessBuilder {
                     // Location of native zip.
                     const to = path.join(this.libPath, artifact.path)
 
-                    let zip = new AdmZip(to)
-                    let zipEntries = zip.getEntries()
-
-                    // Unzip the native zip.
-                    for(let i=0; i<zipEntries.length; i++){
-                        if(zipEntries[i].isDirectory) {
-                            continue
-                        }
-
-                        const fileName = zipEntries[i].entryName
-
-                        let shouldExclude = false
-
-                        // Exclude noted files.
-                        exclusionArr.forEach(function(exclusion){
-                            if(fileName.indexOf(exclusion) > -1){
-                                shouldExclude = true
-                            }
-                        })
-
-                        const extractName = fileName.includes('/') ? fileName.substring(fileName.lastIndexOf('/')) : fileName
-
-                        // Extract the file.
-                        if(!shouldExclude){
-                            fs.writeFile(path.join(tempNativePath, extractName), zipEntries[i].getData(), (err) => {
-                                if(err){
-                                    logger.error('Error while extracting native library:', err)
-                                }
-                            })
-                        }
-
-                    }
+                    extractNativeLibrary(to, nativeLibraryPath, exclusionArr)
                 }
                 // No natives
                 else {
